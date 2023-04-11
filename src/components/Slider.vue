@@ -42,7 +42,7 @@ export default{
 
         <div class="introdution">
             <h1>Devotion that never <i>ends</i></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, adipisci quisquam animi distinctio hic dicta dolore fugiat repellendus reprehenderit veniam voluptatum quibusdam omnis, quam porro voluptates incidunt, numquam nihil sit?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, adipisci quisquam animi distinctio hic dicta dolore fugiat.</p>
         </div>
         <div class="img-wrap">
             <img :src="sliderImg[activeImage]">
@@ -66,17 +66,26 @@ export default{
     height: 500px;
 
     .introdution {
-        width: 30%;
+        width: 40%;
     }
 
     .img-wrap {
-        width: 70%;
+        width: 60%;
     }
 
     img{
         object-fit: contain;
         width: 100%;
         height: 100%;
+    }
+
+    h1{
+        font-size: 4rem;
+    }
+
+    p{
+        opacity: 0.5;
+        padding: 2rem 0;
     }
 }
 

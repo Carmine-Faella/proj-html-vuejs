@@ -1,10 +1,12 @@
 <script>
 
 import Slider from './Slider.vue';
+import CardList from './CardList.vue';
 
 export default{
   components:{
-    Slider
+    Slider,
+    CardList
   },
   data(){
     return{
@@ -18,6 +20,7 @@ export default{
 
 <template>
   <Slider/>
+  <CardList/>
 </template>
 
 <style scoped lang="scss">
