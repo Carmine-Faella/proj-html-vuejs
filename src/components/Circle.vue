@@ -9,6 +9,7 @@ export default{
     props:{
         title:String,
         icon:String,
+        color:String
     }
 }
 
@@ -17,7 +18,7 @@ export default{
 <template>
     
         <div class="d-flex">
-            <div class="icon"><i :class="icon"></i></div>
+            <div class="icon" :class="color"><i :class="icon"></i></div>
             <div class="circle-wrapper">
                 <h3>{{ title }}</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -55,5 +56,19 @@ h3{
 
 p{
     opacity: 0.5;
+}
+
+.color-ligther{
+    color:$text-color-4
+}
+
+.color-message{
+    color:$text-color-3
+}
+.color-cloud{
+    color:$text-color-10
+}
+.color-pen{
+    color:$text-color-7
 }
 </style>
