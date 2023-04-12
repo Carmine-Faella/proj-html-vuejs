@@ -41,8 +41,9 @@ export default{
         </div>
 
         <div class="introdution">
-            <h1>Devotion that never <i>ends</i></h1>
+            <h1>Devotion that never <span><i>ends</i></span></h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, adipisci quisquam animi distinctio hic dicta dolore fugiat.</p>
+            <button>READ MORE</button>
         </div>
         <div class="img-wrap">
 
@@ -56,6 +57,7 @@ export default{
             </div>
 
             <img :src="sliderImg[activeImage]" class="image">
+
         </div>
 
     </div>
@@ -69,9 +71,9 @@ export default{
 <style scoped lang="scss">
 @use '../styles/general.scss' as *;
 @use '../styles/partial/variables.scss' as *;
+@use '../styles/partial/-mixin.scss' as *;
 .container{
-    margin: auto;
-    max-width: 80%;
+    @include my-container;
     display: flex;
     height: 500px;
 
@@ -123,6 +125,12 @@ export default{
 
     h1{
         font-size: 4rem;
+        font-weight: 300;
+        
+        span{
+            font-family: 'Dancing Script', cursive;
+            font-weight: bolder;
+        }
     }
 
     p{
@@ -132,11 +140,10 @@ export default{
 }
 
 .prevImg, .nextImg{
+    @include my-display-flex;
     width: 30px;
     height: 30px;
-    display: flex;
     justify-content: center;
-    align-items: center;
     background-color: $back-10;
     border-radius: 50%;
     position: absolute;  
@@ -165,9 +172,24 @@ export default{
         margin: 0 0.5rem;
     }
 }
-
 .active{
     transform: scale(1.5);
+}
+
+button{
+    padding: 1rem;
+    background: none;
+    border: none;
+    border: 2px solid $border-color-4;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    &:hover{
+        background-color: $border-color-4;
+        transition: all 2s ease;
+    }
+
 }
 
 </style>

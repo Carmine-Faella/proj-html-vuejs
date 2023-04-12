@@ -1,0 +1,9 @@
+@mixin my-display-flex{
+    display: flex;
+    align-items: center;
+}
+
+@mixin my-container{
+    max-width: 65%;
+    margin: auto;
+}

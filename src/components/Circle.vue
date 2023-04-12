@@ -29,14 +29,14 @@ export default{
 <style scoped lang="scss">
 @use '../styles/general.scss' as *;
 @use '../styles/partial/variables.scss' as *;
+@use '../styles/partial/-mixin.scss' as *;
 .icon{
     width: 150px;
     height: 150px;
     border-radius: 50%;
     background-color: $back-6;
-    display: flex;
+    @include my-display-flex;
     justify-content: center;
-    align-items: center;
 
     i{
         font-size: 2rem;
@@ -45,9 +45,8 @@ export default{
 }
 
 .d-flex{
-    display: flex;
+    @include my-display-flex;
     flex-direction: column;
-    align-items: center;
 }
 
 h3{

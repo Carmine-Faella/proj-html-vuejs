@@ -51,9 +51,9 @@ export default{
 
 @use '../styles/general.scss' as *;
 @use '../styles/partial/variables.scss' as *;
+@use '../styles/partial/-mixin.scss' as *;
 .icon-cnt{
-    max-width: 80%;
-    margin: auto;
+    @include my-container;
     display: flex;
     position: relative;
 
