@@ -2,11 +2,13 @@
 
 import Slider from './Slider.vue';
 import CardList from './CardList.vue';
+import CircleList from './CircleList.vue';
 
 export default{
   components:{
     Slider,
-    CardList
+    CardList,
+    CircleList
   },
   data(){
     return{
@@ -21,6 +23,7 @@ export default{
 <template>
   <Slider/>
   <CardList/>
+  <CircleList/>
 </template>
 
 <style scoped lang="scss">
