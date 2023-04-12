@@ -10,18 +10,6 @@ export default{
         return{
             cardList:[
                 {
-                    url:'h-2-blog-img-1.jpg',
-                    name:'Illustartion of Novels'
-                },
-                {
-                    url:'h-2-blog-img-2.jpg',
-                    name:'Illustartion of Novels'
-                },
-                {
-                    url:'h-2-blog-img-3.jpg',
-                    name:'Illustartion of Novels'
-                },
-                {
                     url:'h-2-port-img-1.jpg',
                     name:'Illustartion of Novels'
                 },
@@ -54,15 +42,27 @@ export default{
 
 <template>
 
-    <div v-for="card,index in cardList" :key="index">
-        <Card
-        :image="card.url"
-        :name="card.name"
-        />
+    <div class="box-cnt">
+
+        <div v-for="card,index in cardList" :key="index" class="box">
+
+            <Card
+            :image="card.url"
+            :name="card.name"
+            />
+
+        </div>
+
     </div>
 
 </template>
 
 <style scoped lang="scss">
+@use '../styles/general.scss' as *;
+.box{
+    display: inline-block;
+    width: calc(100%/3);
+}
+
 
 </style>

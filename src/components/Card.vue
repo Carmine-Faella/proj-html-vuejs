@@ -28,5 +28,12 @@ export default{
 </template>
 
 <style scoped lang="scss">
+@use '../styles/general.scss' as *;
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 </style>

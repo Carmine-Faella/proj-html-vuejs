@@ -7,7 +7,7 @@ export default{
             sliderImg:[
                 'h-2-slider-img-11.png',
                 'h-2-slider-img-15.png',
-                'h-2-slider-img-16.png'
+                'short-slider-rev-1-img-3.png'
             ]
         }
     },
@@ -45,7 +45,17 @@ export default{
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, adipisci quisquam animi distinctio hic dicta dolore fugiat.</p>
         </div>
         <div class="img-wrap">
-            <img :src="sliderImg[activeImage]">
+
+            <div class="slider-short">
+                <img src="../assets/h-2-slider-img-12.png" alt="slider img" class="slider-1">
+                <img src="../assets/h-2-slider-img-13.png" alt="slider img" class="slider-2">
+                <img src="../assets/h-2-slider-img-14.png" alt="slider img" class="slider-3">
+                <img src="../assets/short-slider-rev-1-img-2.png" alt="slider img" class="slider-4">
+                <img src="../assets/short-slider-rev-1-img-6.png" alt="slider img" class="slider-5">
+                <img src="../assets/h-2-slider-img-17.png" alt="slider img" class="slider-6">
+            </div>
+
+            <img :src="sliderImg[activeImage]" class="image">
         </div>
 
     </div>
@@ -61,7 +71,7 @@ export default{
 @use '../styles/partial/variables.scss' as *;
 .container{
     margin: auto;
-    max-width: 70%;
+    max-width: 80%;
     display: flex;
     height: 500px;
 
@@ -71,12 +81,44 @@ export default{
 
     .img-wrap {
         width: 60%;
+        position: relative;
+
+        .slider-short{
+            img{
+                position: absolute;
+            }
+
+            .slider-1{
+                top: 50%;
+                transform:translateY(-50%) ;
+            }
+            .slider-2{
+                bottom: 0;
+                left: 30px;
+            }
+            .slider-3{
+                left: 80%;
+            }
+
+            .slider-4{
+                left: 10%;
+            }
+            .slider-5{
+                right: 0;
+                top: 30%;
+            }
+            .slider-6{
+                bottom: 0;
+                right: 0;
+            }
+        }
     }
 
-    img{
+    .image{
         object-fit: contain;
         width: 100%;
         height: 100%;
+        padding: 3rem;
     }
 
     h1{
@@ -126,8 +168,6 @@ export default{
 
 .active{
     transform: scale(1.5);
-
 }
-
 
 </style>
