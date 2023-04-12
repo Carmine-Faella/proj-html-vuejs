@@ -34,7 +34,7 @@ export default{
 
 <template>
 
-    <h1 class="text-center">Working process</h1>
+    <h1 class="text-center">Working <span>process</span></h1>
     <div class="icon-cnt text-center">
         <img src="../assets/svg-3.svg" alt="linear">
         <div v-for="item,index in circleItem" :key="index">
@@ -69,5 +69,6 @@ export default{
     text-align: center;
     padding: 3rem 0;
 }
+
 
 </style>

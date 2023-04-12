@@ -38,16 +38,6 @@ section{
     @include my-container;
     text-align: center;
 
-    h1{
-        font-size: 3rem;
-        font-weight: 350;
-
-        span{
-            font-family: 'Dancing Script', cursive;
-            font-weight: bolder;
-        }
-    }
-
     button{
         padding: 1rem 3rem;
         background: none;
