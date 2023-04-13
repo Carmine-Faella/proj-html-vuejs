@@ -1,4 +1,5 @@
 @use './partial/variables.scss' as *;
+@use './partial/-mixin.scss' as *;
 
 *{
     margin: 0;
@@ -18,4 +19,5 @@ h1{
         font-weight: bolder;
     }
 }
+
 

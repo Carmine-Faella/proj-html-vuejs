@@ -96,7 +96,7 @@ section{
     .arrow{
         position: absolute;
         display: inline-block;
-        top: 10%;
+        bottom: 10%;
         right: 0;
         margin-right: 10px;
         background-color: $back-8;

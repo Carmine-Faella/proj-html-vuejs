@@ -68,17 +68,16 @@ section{
     margin: 10px;
     width: calc(100%/3 - 20px);
 }
-
 .arrow{
-        position: absolute;
-        display: inline-block;
-        top: 10%;
-        right: 0;
-        margin-right: 10px;
-        background-color: $back-8;
-        width:30px;
-        height: 30px;
-        @include my-center
+    position: absolute;
+    display: inline-block;
+    top: 10%;
+    right: 0;
+    margin-right: 10px;
+    background-color: $back-8;
+    width:30px;
+    height: 30px;
+    @include my-center
 }
 
 </style>
