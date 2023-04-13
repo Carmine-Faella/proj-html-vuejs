@@ -3,7 +3,53 @@
 export default{
     data(){
         return{
-
+            imageBack:[
+                {
+                    url:'short-slider-rev-1-img-2.png',
+                    cls:'img-flower'
+                },
+                {
+                    url:'short-slider-rev-1-img-6.png',
+                    cls:'img-flower2'
+                },
+                {
+                    url:'short-slider-rev-1-img-1.png',
+                    cls:'img-tree'
+                },
+                {
+                    url:'short-slider-rev-1-img-4.png',
+                    cls:'img-cloud'
+                },
+                {
+                    url:'short-slider-rev-1-img-4.png',
+                    cls:'img-cloud2'
+                },
+                {
+                    url:'short-slider-rev-1-img-5.png',
+                    cls:'img-cloud3'
+                },
+                {
+                    url:'short-slider-rev-1-img-5.png',
+                    cls:'img-cloud4'
+                },
+                {
+                    url:'short-slider-rev-1-img-4.png',
+                    cls:'img-cloud5'
+                },
+                {
+                    url:'short-slider-rev-1-img-4.png',
+                    cls:'img-cloud6'
+                },
+                {
+                    url:'short-slider-rev-1-img-9.png',
+                    cls:'img-tree2'
+                }
+            ]
+        }
+    },
+    methods:{
+        getImagePath: function(img){
+            return new URL(`../assets/${img}`, import.meta.url).href;
         }
     }
 }
@@ -21,16 +67,7 @@ export default{
         </div>
 
         <div class="img-back">
-            <img src="../assets/short-slider-rev-1-img-2.png" alt="immagine sfondo" class="img-flower">
-            <img src="../assets/short-slider-rev-1-img-6.png" alt="immagine sfondo" class="img-flower2">
-            <img src="../assets/short-slider-rev-1-img-1.png" alt="immagine sfondo" class="img-tree">
-            <img src="../assets/short-slider-rev-1-img-4.png" alt="immagine sfondo" class="img-cloud">
-            <img src="../assets/short-slider-rev-1-img-4.png" alt="immagine sfondo" class="img-cloud2">
-            <img src="../assets/short-slider-rev-1-img-5.png" alt="immagine sfondo" class="img-cloud3">
-            <img src="../assets/short-slider-rev-1-img-5.png" alt="immagine sfondo" class="img-cloud4">
-            <img src="../assets/short-slider-rev-1-img-4.png" alt="immagine sfondo" class="img-cloud5">
-            <img src="../assets/short-slider-rev-1-img-4.png" alt="immagine sfondo" class="img-cloud6">
-            <img src="../assets/short-slider-rev-1-img-9.png" alt="immagine sfondo" class="img-tree2">
+            <img v-for='image in imageBack' :src="getImagePath(image.url)" alt="immagine sfondo" :class="image.cls">
         </div>
 
     </section>
