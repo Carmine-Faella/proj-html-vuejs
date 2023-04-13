@@ -99,7 +99,7 @@ section{
         transform: rotateX(180deg);
         width: 200px;
         height: 80px;
-        right: -50px;
+        right: 0;
     }
 
     .img-cloud4{

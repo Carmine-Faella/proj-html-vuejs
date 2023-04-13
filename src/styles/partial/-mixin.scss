@@ -7,3 +7,9 @@
     max-width: 65%;
     margin: auto;
 }
+
+@mixin my-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

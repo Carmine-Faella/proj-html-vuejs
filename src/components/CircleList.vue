@@ -38,15 +38,22 @@ export default{
 
 <template>
 
-    <h1 class="text-center">Working <span>process</span></h1>
-    <div class="icon-cnt text-center">
-        <img src="../assets/svg-3.svg" alt="linear">
-        <div v-for="item,index in circleItem" :key="index">
+    <section>
+        <h1 class="text-center">Working <span>process</span></h1>
+        <div class="icon-cnt text-center">
 
-            <Circle :title="item.title" :icon="item.icon" :color="item.color"/>
+            <div class="linear">
+                <img src="../assets/svg-3.svg" alt="linear">
+            </div>
+            
+            <div v-for="item,index in circleItem" :key="index">
 
+                <Circle :title="item.title" :icon="item.icon" :color="item.color"/>
+
+            </div>
         </div>
-    </div>
+        <div class="arrow"><img src="../assets/svg-2.svg"></div>
+    </section>
 
 </template>
 
@@ -56,22 +63,47 @@ export default{
 @use '../styles/general.scss' as *;
 @use '../styles/partial/variables.scss' as *;
 @use '../styles/partial/-mixin.scss' as *;
-.icon-cnt{
+
+section{
+    position: relative;
+
+    .icon-cnt{
     @include my-container;
     display: flex;
     position: relative;
+    padding-bottom: 5rem;
 
-    img{
+    .linear{
+
+        img{
         position: absolute;
         z-index: -1;
         width: 90%;
         padding-left: 5rem;
+        }
     }
-}
+    
+    }
 
-.text-center,h1{
-    text-align: center;
-    padding: 3rem 0;
+    h1{
+        padding: 3rem 0;
+    }
+
+    .text-center{
+        text-align: center;
+    }
+
+    .arrow{
+        position: absolute;
+        display: inline-block;
+        top: 10%;
+        right: 0;
+        margin-right: 10px;
+        background-color: $back-8;
+        width:30px;
+        height: 30px;
+        @include my-center
+    }
 }
 
 
