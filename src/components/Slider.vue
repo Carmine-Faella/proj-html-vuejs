@@ -8,6 +8,32 @@ export default{
                 'h-2-slider-img-11.png',
                 'h-2-slider-img-15.png',
                 'short-slider-rev-1-img-3.png'
+            ],
+            backImages:[
+                {
+                    url:'h-2-slider-img-12.png',
+                    cls:'slider-1'
+                },
+                {
+                    url:'h-2-slider-img-13.png',
+                    cls:'slider-2'
+                },
+                {
+                    url:'h-2-slider-img-14.png',
+                    cls:'slider-3'
+                },
+                {
+                    url:'short-slider-rev-1-img-2.png',
+                    cls:'slider-4'
+                },
+                {
+                    url:'short-slider-rev-1-img-6.png',
+                    cls:'slider-5'
+                },
+                {
+                    url:'h-2-slider-img-17.png',
+                    cls:'slider-6'
+                },
             ]
         }
     },
@@ -26,6 +52,9 @@ export default{
         },
         changeImage(index){
             this.activeImage = index
+        },
+        getImagePath: function(img){
+            return new URL(`../assets/${img}`, import.meta.url).href;
         }
     }
 }
@@ -48,12 +77,7 @@ export default{
         <div class="img-wrap">
 
             <div class="slider-short">
-                <img src="../assets/h-2-slider-img-12.png" alt="slider img" class="slider-1">
-                <img src="../assets/h-2-slider-img-13.png" alt="slider img" class="slider-2">
-                <img src="../assets/h-2-slider-img-14.png" alt="slider img" class="slider-3">
-                <img src="../assets/short-slider-rev-1-img-2.png" alt="slider img" class="slider-4">
-                <img src="../assets/short-slider-rev-1-img-6.png" alt="slider img" class="slider-5">
-                <img src="../assets/h-2-slider-img-17.png" alt="slider img" class="slider-6">
+                <img v-for='image in backImages' :src="getImagePath(image.url)" alt="slider img" :class="image.cls">
             </div>
 
             <img :src="sliderImg[activeImage]" class="image">
