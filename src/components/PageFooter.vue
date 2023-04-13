@@ -4,8 +4,33 @@ export default{
 
   data(){
     return{
-
+      iconFoot:[
+          'fa-brands fa-twitter',
+          'fa-brands fa-pinterest-p',
+          'fa-brands fa-facebook-f',
+          'fa-brands fa-instagram'
+      ],
+      item1:[
+        'maree.qode@gmail.com',
+        '+44645 321 789'
+      ],
+      item2:[
+        "Avenue d'Auderghem 10",
+        '1040 Brussels, Brlgium'
+      ],
+      logo:[
+        {
+          url:'logo-sidearea-1.png',
+          alt:'logo Footer',
+          text:"Le's get creative"
+        }
+      ]
     }
+  },
+  methods:{
+        getImagePath: function(img){
+            return new URL(`../assets/${img}`, import.meta.url).href;
+        }
   }
   
 }
@@ -17,28 +42,23 @@ export default{
   <section>
     <div class="container">
 
-      <div>
-        <img src="../assets/logo-sidearea-1.png" alt="Logo Footer">
-        <div>Let's get creative</div>
+      <div v-for="item in logo">
+        <img :src="getImagePath(item.url)" :alt="item.alt">
+        <div>{{ item.text }}</div>
       </div>
 
       <div>
-        <div><a href="#">maree.qode@gmail.com</a></div>
-        <div>+44645 321 789</div>
+        <div v-for="item in item1"><a href="#">{{ item }}</a></div>
       </div>
 
       <div>
-        <div><a href="#">Avenue d'Auderghem 10</a></div>
-        <div><a href="#">1040 Brussels, Brlgium</a></div>
+        <div v-for="item in item2"><a href="#">{{item}}</a></div>
       </div>
 
       <div>
         <div>Stay in touch with us</div>
         <div>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
-          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a v-for="icon in iconFoot" href="#"><i :class="icon"></i></a>
         </div>
       </div>
 
@@ -77,5 +97,5 @@ section{
   }
 }
 
-
 </style>
+
