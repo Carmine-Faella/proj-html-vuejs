@@ -5,9 +5,17 @@ export default{
         return{
             activeImage:0,
             sliderImg:[
-                'h-2-slider-img-11.png',
-                'h-2-slider-img-15.png',
-                'short-slider-rev-1-img-3.png'
+                {
+                    url:'h-2-slider-img-11.png',
+                },
+                {
+                    url:'h-2-slider-img-15.png',
+                    url2:'h-2-slider-img-16.png',
+                },
+                {
+                    url:'short-slider-rev-1-img-3.png'
+                }
+                
             ],
             backImages:[
                 {
@@ -80,7 +88,10 @@ export default{
                 <img v-for='image in backImages' :src="getImagePath(image.url)" alt="slider img" :class="image.cls">
             </div>
 
-            <img :src="sliderImg[activeImage]" class="image">
+            <div class="image">
+                <img :src="sliderImg[activeImage].url" :class="activeImage==1?'img2':'img'">
+                <img v-show='activeImage == 1' :src="sliderImg[activeImage].url2" class="img2">
+            </div>
 
         </div>
 
@@ -141,10 +152,22 @@ export default{
     }
 
     .image{
-        object-fit: contain;
         width: 100%;
         height: 100%;
         padding: 3rem;
+
+        .img{
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+        }
+
+        .img2{
+            width: 50%;
+            object-fit: contain;
+            padding-top: 3rem;
+            display: inline-block;
+        }
     }
 
     h1{
